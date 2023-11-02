@@ -32,7 +32,8 @@ function App() {
     <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen font-gaegu">
       <Navbar />
       <h1 className="text-center text-white p-4 text-2xl text-md">
-        Your Portal to Rick and Morty Characters, broh!
+        Your Portal to <span className="text-green-500">Rick and Morty</span>{" "}
+        Characters, broh!
       </h1>
       <Search setSearch={setSearch} />
       <div className="container mx-auto p-2">

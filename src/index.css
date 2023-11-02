@@ -10,7 +10,7 @@
 
 .card:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(55, 255, 20, 0.482);
+  /* box-shadow: 0 0 20px rgba(55, 255, 20, 0.482); */
   cursor: pointer;
 }
 
@@ -19,12 +19,4 @@
     0,
     -3px
   ); /* Adjust the value to control the pop-out effect */
-}
-
-.custom-green {
-  background-color: rgb(12, 227, 22);
-}
-
-.custom-green-border {
-  border: solid 2px rgb(12, 227, 22);
 }
