@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(55, 255, 20, 0.482);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translate(
+    0,
+    -3px
+  ); /* Adjust the value to control the pop-out effect */
+}
