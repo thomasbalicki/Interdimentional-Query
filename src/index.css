@@ -20,3 +20,11 @@
     -3px
   ); /* Adjust the value to control the pop-out effect */
 }
+
+.custom-green {
+  background-color: rgb(12, 227, 22);
+}
+
+.custom-green-border {
+  border: solid 2px rgb(12, 227, 22);
+}

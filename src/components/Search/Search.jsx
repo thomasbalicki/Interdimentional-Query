@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "../../index.css";
 
 function Search({ setSearch }) {
   const prevDefault = (e) => {

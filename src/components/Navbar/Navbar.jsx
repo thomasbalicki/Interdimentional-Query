@@ -1,11 +1,12 @@
 import CycloneIcon from "@mui/icons-material/Cyclone";
+import "../../index.css";
 
 function Navbar() {
   return (
     <nav className="bg-green-400 p-2">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-xl font-bold">
-          <CycloneIcon className="mb-1" />
+          <CycloneIcon className="mb-1 mr-1" />
           Interdimensional Query
         </div>
         <ul className="flex space-x-4 text-xl">
