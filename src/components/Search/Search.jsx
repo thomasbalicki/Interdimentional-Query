@@ -10,7 +10,7 @@ function Search({ setSearch }) {
     <div className="flex items-center space-x-4 justify-center">
       <input
         type="text"
-        placeholder="Search character by name"
+        placeholder="Search 800+ characters by name"
         className="py-2 px-3 rounded-lg border border-green-500 focus:outline-none focus:ring focus:ring-green-400 w-64"
         onChange={(e) => setSearch(e.target.value)}
       />

@@ -20,3 +20,9 @@
     -3px
   ); /* Adjust the value to control the pop-out effect */
 }
+
+.badge {
+  top: 10px;
+  right: 20px;
+  font-size: 17px;
+}

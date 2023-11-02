@@ -7,8 +7,24 @@ function Card({ data }) {
       return "bg-green-500";
     } else if (status === "Dead") {
       return "bg-red-500";
+    } else if (status === "Mythological Creature") {
+      return "bg-orange-500";
     } else {
       return "bg-blue-400";
+    }
+  };
+
+  const getSpeciesColorClass = (species) => {
+    if (species === "Human") {
+      return "bg-yellow-100";
+    } else if (species === "Alien") {
+      return "bg-purple-100";
+    } else if (species === "Mythological Creature") {
+      return "bg-teal-100";
+    } else if (species === "Cronenberg") {
+      return "bg-pink-100";
+    } else {
+      return "bg-blue-100";
     }
   };
 
@@ -21,9 +37,16 @@ function Card({ data }) {
       <div className="flex flex-wrap justify-center">
         {data.map((character) => (
           <div
-            className="w-48 max-w-xs rounded overflow-hidden bg-gray-100 shadow-lg m-4 border-2 border-green-500 card flex flex-col"
+            className="w-48 max-w-xs rounded overflow-hidden bg-gray-100 shadow-lg m-4 border-2 border-green-500 card flex flex-col relative"
             key={character.id}
           >
+            <span
+              className={`absolute top-0 right-0 mt-1 mr-1 inline-block ${getStatusColorClass(
+                character.status
+              )} rounded-full px-3 py-1 text-sm font-semibold text-white status`}
+            >
+              {character.status}
+            </span>
             <img
               className="w-full"
               src={character.image}
@@ -40,21 +63,12 @@ function Card({ data }) {
             <div className="px-2 pb-1">
               <div className="flex">
                 <span
-                  className={`inline-block ${getStatusColorClass(
-                    character.status
-                  )} rounded-full px-3 py-1 mx-1 text-sm font-semibold text-white status`}
+                  className={`inline-block ${getSpeciesColorClass(
+                    character.species
+                  )} text-gray-700 rounded-full px-3 py-1 mx-1 text-sm font-semibold species`}
                 >
-                  {character.status}
+                  {character.species}
                 </span>
-                {character.species === "Human" ? (
-                  <span className="inline-block bg-yellow-500 text-white rounded-full px-3 py-1 mx-1 text-sm font-semibold species">
-                    {character.species}
-                  </span>
-                ) : (
-                  <span className="inline-block bg-purple-500 text-white rounded-full px-3 py-1 mx-1 text-sm font-semibold species">
-                    {character.species}
-                  </span>
-                )}
               </div>
             </div>
           </div>
