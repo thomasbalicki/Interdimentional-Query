@@ -11,8 +11,10 @@ function Search({ setSearch }) {
       <input
         type="text"
         placeholder="Search 800+ characters by name"
-        className="py-2 px-3 rounded-lg border border-green-500 focus:outline-none focus:ring focus:ring-green-400 w-64"
-        onChange={(e) => setSearch(e.target.value)}
+        className="py-2 px-3 rounded-lg text-gray-100 bg-gray-700 focus:outline-none focus:ring focus:ring-green-400 w-64"
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
       />
       <button
         onClick={prevDefault}
