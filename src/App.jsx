@@ -11,7 +11,7 @@ import Search from "./components/Search/Search";
 //import Search from "./components/Search/Search";
 import rickAndMortyLogo from "../Public/rick-and-morty-logo.png";
 //import rick from "../Public/rick.png";
-import morty from "../Public/morty.png";
+//import morty from "../Public/morty.png";
 import Pagination from "./components/Pagination/Pagination";
 
 function App() {
@@ -73,12 +73,12 @@ function App() {
             </div>
           </div>
         </div>
+        <Pagination
+          numberOfPages={numberOfPages}
+          pageNumber={pageNumber}
+          onPageChange={handlePageChange}
+        />
       </div>
-      <Pagination
-        numberOfPages={numberOfPages}
-        pageNumber={pageNumber}
-        onPageChange={handlePageChange}
-      />
     </div>
   );
 }
