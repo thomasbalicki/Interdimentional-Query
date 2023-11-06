@@ -1,18 +1,16 @@
-.pagination {
+.pageNumbers {
+  list-style: none;
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+  color: white;
 }
 
-.pagination a {
-  padding: 0.5rem;
-  margin: 0.2rem;
-  border: 1px solid #333;
-  color: #fff;
+.pageNumbers li {
+  padding: 10px;
+  border: 1px solid white;
   cursor: pointer;
-  text-decoration: none;
 }
 
-.pagination .active a {
-  background-color: #333;
+.pageNumbers li.active {
+  background: white;
+  color: black;
 }
