@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 
-function Pagination({ numberOfPages, pageNumber, onPageChange }) {
-  const pageNumberLimit = 10;
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(10);
-  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-
+function Pagination({
+  numberOfPages,
+  pageNumber,
+  onPageChange,
+  pageNumberLimit,
+  maxPageNumberLimit,
+  setMaxPageNumberLimit,
+  minPageNumberLimit,
+  setMinPageNumberLimit,
+}) {
   if (!numberOfPages) return null;
 
   // Create an array of page numbers from 1 to pageInfo
@@ -30,10 +34,10 @@ function Pagination({ numberOfPages, pageNumber, onPageChange }) {
   };
 
   return (
-    <div className="m-5 flex justify-center">
+    <div className="mt-5 mb-3 flex justify-center">
       <ul className="list-none flex">
         <button
-          className="rounded-full bg-gray-700 text-white cursor-pointer p-2 mx-1 px-3"
+          className="rounded-full bg-gray-700 text-white cursor-pointer p-2 mx-1 px-3 hover:bg-gray-500"
           onClick={handlePrevBtn}
           disabled={pageNumber == pages[0] ? true : false}
         >
@@ -48,7 +52,7 @@ function Pagination({ numberOfPages, pageNumber, onPageChange }) {
               className={
                 pageNumber == page
                   ? "bg-green-500 text-white rounded-full cursor-pointer p-2 mx-1 px-3"
-                  : "rounded-full bg-gray-700 text-white cursor-pointer p-2 mx-1 px-3"
+                  : "rounded-full bg-gray-700 text-white cursor-pointer p-2 mx-1 px-3 hover:bg-gray-500"
               }
             >
               <button>{page}</button>
@@ -56,7 +60,7 @@ function Pagination({ numberOfPages, pageNumber, onPageChange }) {
           ) : null
         )}
         <button
-          className="rounded-full bg-gray-700 text-white cursor-pointer p-2 mx-1 px-3"
+          className="rounded-full bg-gray-700 text-white cursor-pointer p-2 mx-1 px-3 hover:bg-gray-500"
           onClick={handleNextbtn}
           disabled={pageNumber == pages[pages.length - 1] ? true : false}
         >
@@ -71,5 +75,10 @@ Pagination.propTypes = {
   numberOfPages: PropTypes.number,
   pageNumber: PropTypes.number,
   onPageChange: PropTypes.func,
+  pageNumberLimit: PropTypes.number,
+  maxPageNumberLimit: PropTypes.number,
+  setMaxPageNumberLimit: PropTypes.func,
+  minPageNumberLimit: PropTypes.number,
+  setMinPageNumberLimit: PropTypes.func,
 };
 export default Pagination;

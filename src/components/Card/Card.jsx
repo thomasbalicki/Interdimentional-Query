@@ -63,7 +63,7 @@ function Card({ data }) {
                 <span
                   className={`inline-block ${getSpeciesColorClass(
                     character.species
-                  )} text-gray-100 rounded-full px-3 py-1 mx-1 text-sm font-semibold species`}
+                  )} text-gray-100 rounded-full px-3 py-1 mx-1 mb-1 text-sm font-semibold species`}
                 >
                   {character.species}
                 </span>

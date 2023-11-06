@@ -1,24 +1,42 @@
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Pagination from "./components/Pagination/Pagination";
 import Card from "./components/Card/Card";
 import Navbar from "./components/Navbar/Navbar";
 import Search from "./components/Search/Search";
-//import Filter from "./components/Filter/Filter";
-//import Filter from "./components/Filter/Filter";
-//import Navbar from "./components/Navbar/Navbar";
-//import Pagination from "./components/Pagination/Pagination";
-//import Search from "./components/Search/Search";
+
+import Locations from "./pages/Locations";
+import Episodes from "./pages/Episodes";
+
 import rickAndMortyLogo from "../Public/rick-and-morty-logo.png";
 //import rick from "../Public/rick.png";
 //import morty from "../Public/morty.png";
-import Pagination from "./components/Pagination/Pagination";
 
 function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/locations" element={<Locations />} />
+      </Routes>
+    </Router>
+  );
+}
+
+function Home() {
   const [fetchedData, setFetchedData] = useState([]);
   const [search, setSearch] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(null);
+  const pageNumberLimit = 7;
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(7);
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
 
   //let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
@@ -43,11 +61,11 @@ function App() {
 
   const handlePageChange = (newPageNumber) => {
     setPageNumber(newPageNumber);
+    window.scrollTo(0, 0);
   };
 
   return (
     <div className="bg-gradient-to-b from-gray-800 to-black min-h-screen font-gaegu">
-      <Navbar />
       <h1 className="text-center text-white p-4 text-2xl text-md">
         Your Portal to{" "}
         <img
@@ -58,8 +76,18 @@ function App() {
         Characters, broh!
       </h1>
       <Search setSearch={setSearch} />
+      <Pagination
+        numberOfPages={numberOfPages}
+        pageNumber={pageNumber}
+        onPageChange={handlePageChange}
+        pageNumberLimit={pageNumberLimit}
+        maxPageNumberLimit={maxPageNumberLimit}
+        minPageNumberLimit={minPageNumberLimit}
+        setMaxPageNumberLimit={setMaxPageNumberLimit}
+        setMinPageNumberLimit={setMinPageNumberLimit}
+      />
       <div className="container mx-auto p-2">
-        <div className="lg:flex">
+        <div className="lg:flex justify-center">
           {/* <Filter /> */}
           {/* <img
             src={morty}
@@ -77,6 +105,11 @@ function App() {
           numberOfPages={numberOfPages}
           pageNumber={pageNumber}
           onPageChange={handlePageChange}
+          pageNumberLimit={pageNumberLimit}
+          maxPageNumberLimit={maxPageNumberLimit}
+          minPageNumberLimit={minPageNumberLimit}
+          setMaxPageNumberLimit={setMaxPageNumberLimit}
+          setMinPageNumberLimit={setMinPageNumberLimit}
         />
       </div>
     </div>

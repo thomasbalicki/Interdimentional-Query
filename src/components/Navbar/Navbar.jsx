@@ -1,9 +1,17 @@
 import CycloneIcon from "@mui/icons-material/Cyclone";
-import "../../index.css";
 
 function Navbar() {
+  const isLinkActive = (path) => {
+    return window.location.pathname === path;
+  };
+
+  const getLinkStyle = (path) => {
+    return isLinkActive(path)
+      ? "text-white bg-green-500 p-2 rounded"
+      : "text-white hover:bg-gray-500 p-2 rounded";
+  };
   return (
-    <nav className="bg-gray-700 p-2">
+    <nav className="bg-gray-700 p-2 font-gaegu">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-green-500 text-xl font-bold">
           <CycloneIcon className="mb-1 mr-1" />
@@ -11,19 +19,19 @@ function Navbar() {
         </div>
         <ul className="flex space-x-4 text-xl">
           <li>
-            <button className="text-white bg-transparent border-none hover:bg-gray-200 hover:text-green-500 p-1 px-2 rounded-lg transition-colors duration-300">
+            <a href="/" className={getLinkStyle("/")}>
               Characters
-            </button>
+            </a>
           </li>
           <li>
-            <button className="text-white bg-transparent border-none hover:bg-gray-200 hover:text-green-500 p-1 px-2 rounded-lg transition-colors duration-300">
+            <a href="/locations" className={getLinkStyle("/locations")}>
               Locations
-            </button>
+            </a>
           </li>
           <li>
-            <button className="text-white bg-transparent border-none hover:bg-gray-200 hover:text-green-500 p-1 px-2 rounded-lg transition-colors duration-300">
+            <a href="/episodes" className={getLinkStyle("/episodes")}>
               Episodes
-            </button>
+            </a>
           </li>
         </ul>
       </div>
