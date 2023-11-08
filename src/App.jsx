@@ -11,8 +11,6 @@ import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
 
 import rickAndMortyLogo from "../Public/rick-and-morty-logo.png";
-//import rick from "../Public/rick.png";
-//import morty from "../Public/morty.png";
 
 function App() {
   return (
@@ -34,11 +32,10 @@ function Home() {
   const [search, setSearch] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(null);
+
   const pageNumberLimit = 7;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(7);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-
-  //let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   const updateApi = useCallback(() => {
     return `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
@@ -75,7 +72,7 @@ function Home() {
         />{" "}
         Characters, broh!
       </h1>
-      <Search setSearch={setSearch} />
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <Pagination
         numberOfPages={numberOfPages}
         pageNumber={pageNumber}
@@ -88,13 +85,6 @@ function Home() {
       />
       <div className="container mx-auto p-2">
         <div className="lg:flex justify-center">
-          {/* <Filter /> */}
-          {/* <img
-            src={morty}
-            alt="Rick"
-            className="fixed w-64 bottom-0 left-0 mb-2 ml-2 z-10"
-          /> */}
-
           <div className="lg:w-3/4">
             <div className="lg:flex">
               <Card data={fetchedData} />

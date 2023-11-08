@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 import "../../index.css";
 
-function Search({ setSearch }) {
+function Search({ setSearch, setPageNumber }) {
   const prevDefault = (e) => {
     e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    setPageNumber(1);
+    setSearch(e.target.value);
   };
 
   return (
@@ -12,9 +17,7 @@ function Search({ setSearch }) {
         type="text"
         placeholder="Search 800+ characters by name"
         className="py-2 px-3 rounded-lg text-gray-100 bg-gray-700 focus:outline-none focus:ring focus:ring-green-400 w-64"
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
+        onChange={handleChange}
       />
       <button
         onClick={prevDefault}
@@ -28,6 +31,7 @@ function Search({ setSearch }) {
 
 Search.propTypes = {
   setSearch: PropTypes.func.isRequired,
+  setPageNumber: PropTypes.func.isRequired,
 };
 
 export default Search;
