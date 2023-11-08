@@ -11,6 +11,7 @@ import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
 
 import rickAndMortyLogo from "../Public/rick-and-morty-logo.png";
+import Filter from "./components/Filter/Filter";
 
 function App() {
   return (
@@ -85,10 +86,11 @@ function Home() {
       />
       <div className="container mx-auto p-2">
         <div className="lg:flex justify-center">
+          <div className="lg:w-1/4 justify-center">
+            <Filter />
+          </div>
           <div className="lg:w-3/4">
-            <div className="lg:flex">
-              <Card data={fetchedData} />
-            </div>
+            <Card data={fetchedData} />
           </div>
         </div>
         <Pagination
