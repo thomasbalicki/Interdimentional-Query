@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import FilterBTN from "../FilterBTN";
 
-function Status({ setGender, setPageNumber }) {
+function Gender({ setGender, setPageNumber }) {
   const genders = ["female", "male", "genderless", "unknown"];
   return (
     <div>
@@ -19,9 +19,9 @@ function Status({ setGender, setPageNumber }) {
   );
 }
 
-Status.propTypes = {
+Gender.propTypes = {
   setGender: PropTypes.func,
   setPageNumber: PropTypes.func,
 };
 
-export default Status;
+export default Gender;

@@ -14,7 +14,7 @@ function Filter({ setPageNumber, setStatus, setGender }) {
       </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Gender</h1>
-        <Gender setPageNumber={setPageNumber} setStatus={setGender} />
+        <Gender setPageNumber={setPageNumber} setGender={setGender} />
       </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Species</h1>
