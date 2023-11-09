@@ -1,22 +1,17 @@
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
+import "./styles.css";
 
-function FilterBTN({ inputArray }) {
+const FilterBTN = () => {
   return (
     <div>
-      {inputArray.map((value) => (
-        <span
-          key={value}
-          className="inline-block text-gray-100 bg-gray-700 rounded-full px-3 py-1 m-1 text-sm font-semibold species"
-        >
-          {value}
-        </span>
-      ))}
+      <input type="radio" name="size" id="small" />
+      <label htmlFor="small">small</label>
     </div>
   );
-}
-
-FilterBTN.propTypes = {
-  inputArray: PropTypes.array.isRequired,
 };
+
+/* FilterBTN.propTypes = {
+  inputArray: PropTypes.array.isRequired,
+}; */
 
 export default FilterBTN;

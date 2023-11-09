@@ -23,15 +23,13 @@ function Filter() {
       </h1>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Status</h1>
-        <FilterBTN inputArray={status} />
+        <FilterBTN />
       </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Gender</h1>
-        <FilterBTN inputArray={genders} />
       </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Species</h1>
-        <FilterBTN inputArray={species} />
       </div>
     </div>
   );
