@@ -34,14 +34,15 @@ function Home() {
   const [pageNumber, setPageNumber] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(null);
   const [status, setStatus] = useState("");
+  const [gender, setGender] = useState("");
 
   const pageNumberLimit = 7;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(7);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
 
   const updateApi = useCallback(() => {
-    return `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}`;
-  }, [pageNumber, search, status]);
+    return `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}`;
+  }, [pageNumber, search, status, gender]);
 
   useEffect(() => {
     const api = updateApi();
@@ -88,7 +89,11 @@ function Home() {
       <div className="container mx-auto p-2">
         <div className="lg:flex justify-center">
           <div className="lg:w-1/4 justify-center">
-            <Filter setStatus={setStatus} setPageNumber={setPageNumber} />
+            <Filter
+              setStatus={setStatus}
+              setPageNumber={setPageNumber}
+              setGender={setGender}
+            />
           </div>
           <div className="lg:w-3/4">
             <Card data={fetchedData} />

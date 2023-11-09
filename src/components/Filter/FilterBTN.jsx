@@ -3,7 +3,7 @@ import "./styles.css";
 
 const FilterBTN = ({ input, task, setPageNumber, index, name }) => {
   return (
-    <div>
+    <>
       <input type="radio" name={name} id={`${name}-${index}`} />
       <label
         onClick={() => {
@@ -14,7 +14,7 @@ const FilterBTN = ({ input, task, setPageNumber, index, name }) => {
       >
         {input}
       </label>
-    </div>
+    </>
   );
 };
 
