@@ -1,21 +1,7 @@
-import FilterBTN from "./FilterBTN";
+import Status from "./categories/Status";
+import PropTypes from "prop-types";
 
-function Filter() {
-  let status = ["Alive", "Dead", "Unknown"];
-  let genders = ["female", "male", "genderless", "unknown"];
-  let species = [
-    "Human",
-    "Alien",
-    "Humanoid",
-    "Poopybutthole",
-    "Mythological",
-    "Unknown",
-    "Animal",
-    "Disease",
-    "Robot",
-    "Cronenberg",
-    "Planet",
-  ];
+function Filter({ setPageNumber, setStatus }) {
   return (
     <div className="bg-gray-700 lg:mt-3 lg:ml-4 p-2 rounded">
       <h1 className="font-bold text-xl text-gray-100 flex justify-center">
@@ -23,7 +9,7 @@ function Filter() {
       </h1>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Status</h1>
-        <FilterBTN />
+        <Status setPageNumber={setPageNumber} setStatus={setStatus} />
       </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Gender</h1>
@@ -34,5 +20,10 @@ function Filter() {
     </div>
   );
 }
+
+Filter.propTypes = {
+  setStatus: PropTypes.func.isRequired,
+  setPageNumber: PropTypes.func.isRequired,
+};
 
 export default Filter;
