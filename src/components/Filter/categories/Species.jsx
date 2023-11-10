@@ -13,7 +13,6 @@ function Species({ setSpecies, setPageNumber }) {
     "Disease",
     "Robot",
     "Cronenberg",
-    "Planet",
   ];
   return (
     <div>

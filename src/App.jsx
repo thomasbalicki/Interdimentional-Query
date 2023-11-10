@@ -92,6 +92,7 @@ function Home() {
         <div className="lg:flex justify-center">
           <div className="lg:w-1/4 justify-center">
             {/* TODO: Find out why page number isn't being set to one when filters selected */}
+            {/* TODO:Find out how to handle invalid filter combinations */}
 
             <Filter
               setStatus={setStatus}

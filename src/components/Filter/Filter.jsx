@@ -15,11 +15,25 @@ function Filter({ setPageNumber, setStatus, setGender, setSpecies }) {
 
   const getIcon = (visible) => (visible ? " - " : " + ");
 
+  const clear = () => {
+    setStatus("");
+    setGender("");
+    setSpecies("");
+    setPageNumber(1);
+    window.location.reload(false); //not recommended to use this approach as it reloads the whole webpage
+  };
+
   return (
     <div className="bg-gray-700 lg:mt-3 lg:ml-4 p-2 rounded">
       <h1 className="font-bold text-xl text-gray-100 flex justify-center">
         Filters
       </h1>
+      <div
+        className="text-lg text-white underline underline-offset-4 hover:text-green-500 hover:cursor-pointer flex justify-center"
+        onClick={clear}
+      >
+        Clear Filters
+      </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <div className="flex items-center justify-between">
           <h1
