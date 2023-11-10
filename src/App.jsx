@@ -91,6 +91,8 @@ function Home() {
       <div className="container mx-auto p-2">
         <div className="lg:flex justify-center">
           <div className="lg:w-1/4 justify-center">
+            {/* TODO: Find out why page number isn't being set to one when filters selected */}
+
             <Filter
               setStatus={setStatus}
               setPageNumber={setPageNumber}
