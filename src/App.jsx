@@ -12,6 +12,7 @@ import Episodes from "./pages/Episodes";
 
 import rickAndMortyLogo from "../Public/rick-and-morty-logo.png";
 import Filter from "./components/Filter/Filter";
+import { randomQuote } from "./components/Data/RMQuotes";
 
 function App() {
   return (
@@ -76,6 +77,12 @@ function Home() {
           className="inline w-40 h-auto mb-2"
         />{" "}
         Characters, broh!
+      </h1>
+      <h1
+        className="text-white text-lg m-6 absolute top-20 z-10"
+        style={{ width: "275px" }}
+      >
+        {randomQuote}
       </h1>
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <Pagination

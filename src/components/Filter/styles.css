@@ -13,6 +13,10 @@ label {
   cursor: pointer;
 }
 
+label:hover {
+  background-color: #727d91; /* Change this to your desired hover color */
+}
+
 input[type="radio"]:checked + label {
   background-color: #01cc65;
   color: white;
