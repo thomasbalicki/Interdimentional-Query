@@ -4,8 +4,8 @@ input[type="radio"] {
 
 label {
   position: relative;
-  color: #01cc65;
-  border: 2px solid #01cc65;
+  background-color: #4a5568;
+  color: #ffffff;
   border-radius: 10px;
   margin: 2px;
   padding: 0.1em 0.5em;
@@ -16,4 +16,5 @@ label {
 input[type="radio"]:checked + label {
   background-color: #01cc65;
   color: white;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }

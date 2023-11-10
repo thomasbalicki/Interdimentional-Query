@@ -1,8 +1,9 @@
 import Status from "./categories/Status";
 import Gender from "./categories/Gender";
 import PropTypes from "prop-types";
+import Species from "./categories/Species";
 
-function Filter({ setPageNumber, setStatus, setGender }) {
+function Filter({ setPageNumber, setStatus, setGender, setSpecies }) {
   return (
     <div className="bg-gray-700 lg:mt-3 lg:ml-4 p-2 rounded">
       <h1 className="font-bold text-xl text-gray-100 flex justify-center">
@@ -18,6 +19,7 @@ function Filter({ setPageNumber, setStatus, setGender }) {
       </div>
       <div className="bg-gray-800 m-2 p-2 rounded-md">
         <h1 className="text-white pb-1">Species</h1>
+        <Species setPageNumber={setPageNumber} setSpecies={setSpecies} />
       </div>
     </div>
   );
@@ -27,6 +29,7 @@ Filter.propTypes = {
   setStatus: PropTypes.func.isRequired,
   setPageNumber: PropTypes.func.isRequired,
   setGender: PropTypes.func.isRequired,
+  setSpecies: PropTypes.func.isRequired,
 };
 
 export default Filter;

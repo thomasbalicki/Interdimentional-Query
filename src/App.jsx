@@ -33,16 +33,18 @@ function Home() {
   const [search, setSearch] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(null);
+
   const [status, setStatus] = useState("");
   const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
 
   const pageNumberLimit = 7;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(7);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
 
   const updateApi = useCallback(() => {
-    return `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}`;
-  }, [pageNumber, search, status, gender]);
+    return `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+  }, [pageNumber, search, status, gender, species]);
 
   useEffect(() => {
     const api = updateApi();
@@ -93,6 +95,7 @@ function Home() {
               setStatus={setStatus}
               setPageNumber={setPageNumber}
               setGender={setGender}
+              setSpecies={setSpecies}
             />
           </div>
           <div className="lg:w-3/4">
