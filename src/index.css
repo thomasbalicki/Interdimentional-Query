@@ -10,7 +10,7 @@
 
 .card:hover {
   transform: scale(1.03);
-  /* box-shadow: 0 0 20px rgba(55, 255, 20, 0.482); */
+  background-color: #626e7d;
   cursor: pointer;
 }
 
@@ -25,4 +25,16 @@
   top: 10px;
   right: 20px;
   font-size: 17px;
+}
+
+.alive {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.dead {
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.534);
+}
+
+.unknown {
+  box-shadow: 0 0 10px rgba(0, 85, 255, 0.562);
 }

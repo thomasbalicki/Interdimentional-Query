@@ -4,11 +4,11 @@ import "../../index.css";
 function Card({ data }) {
   const getStatusColorClass = (status) => {
     if (status === "Alive") {
-      return "bg-green-600";
+      return "bg-green-600 alive";
     } else if (status === "Dead") {
-      return "bg-red-600";
+      return "bg-red-600 dead";
     } else {
-      return "bg-blue-400";
+      return "bg-blue-500 unknown";
     }
   };
 
@@ -35,7 +35,7 @@ function Card({ data }) {
       <div className="flex flex-wrap justify-center">
         {data.map((character) => (
           <div
-            className="w-48 max-w-xs rounded overflow-hidden bg-gray-700 shadow-lg m-4 card flex flex-col relative shadow-xl"
+            className="w-48 max-w-xs rounded overflow-hidden bg-gray-700 shadow-lg m-4 card flex flex-col relative"
             key={character.id}
           >
             <span

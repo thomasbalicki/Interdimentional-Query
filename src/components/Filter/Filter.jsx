@@ -5,9 +5,9 @@ import Species from "./categories/Species";
 import { useState } from "react";
 
 function Filter({ setPageNumber, setStatus, setGender, setSpecies }) {
-  const [statusVisible, setStatusVisible] = useState(true);
-  const [genderVisible, setGenderVisible] = useState(true);
-  const [speciesVisible, setSpeciesVisible] = useState(true);
+  const [statusVisible, setStatusVisible] = useState(false);
+  const [genderVisible, setGenderVisible] = useState(false);
+  const [speciesVisible, setSpeciesVisible] = useState(false);
 
   const toggleStatus = () => setStatusVisible(!statusVisible);
   const toggleGender = () => setGenderVisible(!genderVisible);
