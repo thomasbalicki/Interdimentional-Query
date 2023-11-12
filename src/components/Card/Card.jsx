@@ -32,7 +32,7 @@ function Card({ data }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-start">
         {data.map((character) => (
           <div
             className="w-48 max-w-xs rounded overflow-hidden bg-gray-700 shadow-lg m-4 card flex flex-col relative"

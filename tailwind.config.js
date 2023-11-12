@@ -5,6 +5,7 @@ export default {
     extend: {},
     fontFamily: {
       gaegu: ["Gaegu", "Sans"],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],

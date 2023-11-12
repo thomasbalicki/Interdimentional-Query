@@ -79,7 +79,7 @@ function Home() {
         Characters, broh!
       </h1>
       <h1
-        className="text-white text-lg m-6 absolute top-20 z-10"
+        className="text-white text-lg m-10 absolute top-20 z-10"
         style={{ width: "275px" }}
       >
         {randomQuote}
