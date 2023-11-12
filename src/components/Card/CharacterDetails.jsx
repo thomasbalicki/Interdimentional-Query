@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "../../index.css";
 import List from "../List/List";
 import axios from "axios";
 
@@ -20,7 +21,6 @@ const CharacterDetails = () => {
         const data = response.data;
         updateFetchedData(data);
 
-        // Fetch episode details for each episode URL
         const episodesData = await Promise.all(
           data.episode.map(async (episodeUrl) => {
             const episodeResponse = await axios.get(episodeUrl);
@@ -28,10 +28,8 @@ const CharacterDetails = () => {
           })
         );
 
-        // Extract episode names from the fetched episode data
         const episodeNamesArray = episodesData.map((episode) => episode.name);
 
-        // Update the episode names state
         updateEpisodeNames(episodeNamesArray);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -40,6 +38,16 @@ const CharacterDetails = () => {
 
     fetchData();
   }, [api]);
+
+  const getStatusColorClass = (status) => {
+    if (status === "Alive") {
+      return "bg-green-600 alive";
+    } else if (status === "Dead") {
+      return "bg-red-600 dead";
+    } else {
+      return "bg-blue-400 unknown";
+    }
+  };
 
   return (
     <div className="container bg-gray-800 min-h-screen flex justify-center font-gaegu text-white">
@@ -51,8 +59,13 @@ const CharacterDetails = () => {
           src={image}
           alt={name}
         />
-
-        <div>{status}</div>
+        <div
+          className={`rounded px-3 py-1 text-sm font-semibold text-gray-100 status ${getStatusColorClass(
+            status
+          )}`}
+        >
+          Status: {status}
+        </div>
 
         <div className="content">
           <div className="">
