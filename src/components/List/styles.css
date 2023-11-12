@@ -1,0 +1,14 @@
+/* Add these styles to your CSS or SCSS file */
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #01cc65;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  border-radius: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: #2d3748;
+}

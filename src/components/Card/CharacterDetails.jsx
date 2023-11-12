@@ -43,13 +43,14 @@ const CharacterDetails = () => {
 
   return (
     <div className="container bg-gray-800 min-h-screen flex justify-center font-gaegu text-white">
-      <div>
-        <List episodeList={episodeNames} />
-      </div>
       <div className="flex flex-col gap-3">
         <h1 className="text-center text-2xl mt-3">{name}</h1>
 
-        <img className="w-full h-auto rounded-md" src={image} alt={name} />
+        <img
+          className="w-full h-auto border-2 rounded-md border-gray-600"
+          src={image}
+          alt={name}
+        />
 
         <div>{status}</div>
 
@@ -71,6 +72,9 @@ const CharacterDetails = () => {
             {species}
           </div>
         </div>
+      </div>
+      <div>
+        <List itemList={episodeNames} />
       </div>
     </div>
   );
