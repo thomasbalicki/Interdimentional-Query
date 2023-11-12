@@ -13,6 +13,7 @@ import Episodes from "./pages/Episodes";
 import rickAndMortyLogo from "../Public/rick-and-morty-logo.png";
 import Filter from "./components/Filter/Filter";
 import { randomQuote } from "./components/Data/RMQuotes";
+import CharacterDetails from "./components/Card/CharacterDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<CharacterDetails />} />
         <Route path="/episodes" element={<Episodes />} />
         <Route path="/locations" element={<Locations />} />
       </Routes>
@@ -109,7 +111,7 @@ function Home() {
             />
           </div>
           <div className="lg:w-3/4">
-            <Card data={fetchedData} />
+            <Card page="/" data={fetchedData} />
           </div>
         </div>
         <Pagination

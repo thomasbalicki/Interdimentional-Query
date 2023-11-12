@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import "../../index.css";
+import { Link } from "react-router-dom";
 
-function Card({ data }) {
+function Card({ data, page }) {
   const getStatusColorClass = (status) => {
     if (status === "Alive") {
       return "bg-green-600 alive";
@@ -13,13 +14,12 @@ function Card({ data }) {
   };
 
   const getSpeciesColorClass = (species) => {
-    if (species === "Human") {
-      return "bg-gray-600";
-    } else if (species === "Alien") {
-      return "bg-gray-600";
-    } else if (species === "Mythological Creature") {
-      return "bg-gray-600";
-    } else if (species === "Cronenberg") {
+    if (
+      species === "Human" ||
+      species === "Alien" ||
+      species === "Mythological Creature" ||
+      species === "Cronenberg"
+    ) {
       return "bg-gray-600";
     } else {
       return "bg-gray-600";
@@ -34,9 +34,10 @@ function Card({ data }) {
     <div>
       <div className="flex flex-wrap justify-start">
         {data.map((character) => (
-          <div
-            className="w-48 max-w-xs rounded overflow-hidden bg-gray-700 shadow-lg m-4 card flex flex-col relative"
+          <Link
+            to={`${page}${character.id}`}
             key={character.id}
+            className="w-48 max-w-xs rounded overflow-hidden bg-gray-700 shadow-lg m-4 card flex flex-col relative"
           >
             <span
               className={`absolute top-0 right-0 mt-1 mr-1 inline-block ${getStatusColorClass(
@@ -69,7 +70,7 @@ function Card({ data }) {
                 </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -78,6 +79,7 @@ function Card({ data }) {
 
 Card.propTypes = {
   data: PropTypes.array.isRequired,
+  page: PropTypes.string,
 };
 
 export default Card;
