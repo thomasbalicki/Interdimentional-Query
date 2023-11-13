@@ -9,7 +9,7 @@ function List({ itemList }) {
         className="overflow-y-auto bg-gray-900 border-2 rounded-md border-gray-700 m-3 scrollbar"
         style={{ maxHeight: "450px", minWidth: "300px" }}
       >
-        <div className="p-2">
+        <div className="px-2">
           <ul className="list-none p-0 m-0">
             {itemList.map((item, index) => (
               <li

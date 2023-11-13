@@ -50,8 +50,8 @@ const CharacterDetails = () => {
   };
 
   return (
-    <div className="container bg-gray-800 min-h-screen flex justify-center font-gaegu text-white">
-      <div className="flex flex-col gap-3">
+    <div className="container bg-gray-800 min-h-screen min-w-full flex justify-center font-gaegu text-white ">
+      <div className="flex flex-col gap-3 m-3">
         <h1 className="text-center text-2xl mt-3">{name}</h1>
 
         <img
