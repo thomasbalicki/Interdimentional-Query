@@ -33,11 +33,13 @@ const Episodes = () => {
   }, [api]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen font-gaegu text-white bg-gray-800">
+    <div className="flex items-center justify-center min-h-screen font-gaegu text-white bg-gradient-to-b from-gray-800 to-black">
       <div className="text-center" style={{ marginLeft: "68px" }}>
         <h1 className="m-3 text-2xl">
           Episode name:{" "}
-          <span className="text-primary">{name || "Unknown"}</span>
+          <span className="text-primary text-green-500">
+            {name || "Unknown"}
+          </span>
         </h1>
         <h5>Air Date: {air_date || "Unknown"}</h5>
         <h4 className="mt-4 mb-4 ml-4 text-left">Select Episode</h4>
