@@ -4,7 +4,7 @@ import "./styles.css";
 function List({ itemList }) {
   return (
     <>
-      <h1 className="text-center text-2xl mt-3">Episodes</h1>
+      <h1 className="text-center text-2xl mt-3">Appears in...</h1>
       <div
         className="overflow-y-auto bg-gray-900 border-2 rounded-md border-gray-700 m-3 scrollbar"
         style={{ maxHeight: "450px", minWidth: "300px" }}

@@ -32,7 +32,7 @@ function Card({ data, page }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-start">
+      <div className="flex flex-wrap">
         {data.map((character) => (
           <Link
             to={`${page}${character.id}`}
